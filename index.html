@@ -1,138 +1,275 @@
-<!DOCTYPE HTML>
-<html>
-
-<head>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      width: 100%;
-      height: 100vh;
-      margin: 0px;
-      /* Schriftart */
-      font-family: "Arial Bold", sans-serif;
-      /* Hintergrundfarbe ändern */
-      background-color: rgb(255,182,193);
-    }
-
-    /* main container der countdown container enthält */
-    .main-container {
-      height: 100%;
-      width: 100%;
-      /* Zentrieren des Inhalts vom Main Container */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* container der countdown enthält */
-    .countdown-container {
-      width: 60%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      /* Hintergrundfarbe ändern */
-      background-color: rgb(255,182,193);
-    }
-
-    /* grösse der text und nummer container */
-    .container {
-      flex: 2 1 auto
-    }
-
-    /* grösse der Abstände zwischen den text und nummern container */
-    .spacer {
-      flex: 1 1 auto;
-    }
-
-    /* style aller nummern */
-    .number {
-      margin: 0px;
-      text-align: center;
-      /*  Schriftgrösse ändern */
-      font-size: 100px;
-      font-weight: bold;
-      /* Schriftfarbe ändern */
-      color: rgb(255,248,243);
-    }
-
-    /* style aller texte */
-    .text {
-      margin: 0px;
-      text-align: center;
-      /*  Schriftgrösse ändern */
-      font-size: 30px;
-      font-weight: bold;
-      /* Schriftfarbe ändern */
-      color: rgb(255,248,243);
-    }
-
-    .final-text {
-      padding-top: 100px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="main-container">
-    <div class="countdown-container" >
-      <div class="container">
-        <p class="number" id="days"></p>
-        <p class="text">TAGE</p>
-      </div>
-      <div class="spacer"></div>
-      <div class="container">
-        <p class="number"  id="hours"></p>
-        <p class="text">STUNDEN</p>
-      </div>
-      <div class="spacer"></div>
-      <div class="container">
-        <p class="number" id="minutes"></p>
-        <p class="text">MINUTEN</p>
-      </div>
-      <div class="spacer"></div>
-      <div class="container">
-        <p class="number"  id="seconds"></p>
-        <p class="text">SEKUNDEN</p>
-      </div>
-    </div>
-    <p id="countdown-finish" class="final-text text"></p>
-  </div>
-  <script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("Aug 15, 2022 08:00:00").getTime();
-
-    // Update the count down every 1 second
-    var x = setInterval(function () {
-
-      // Get today's date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Output the result in an element with id="demo"
-      // Wörter ändern
-      document.getElementById("days").innerHTML = days;
-      document.getElementById("hours").innerHTML = hours;
-      document.getElementById("minutes").innerHTML = minutes;
-      document.getElementById("seconds").innerHTML = seconds;
-
-      // If the countdown is over, write some text 
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown-finish").innerHTML = "Ich freue mich auf eine gemeinsame Zukunft mit dir!";
-      }
-    }, 1000);
-  </script>
-
-</body>
-
+<!DOCTYPE HTML>
+
+<html>
+
+
+
+<head>
+
+  <meta name="viewport"
+
+        content="width=device-width, initial-scale=1">
+
+  <style>
+
+    body {
+
+      width: 100%;
+
+      height: 100vh;
+
+      margin: 0px;
+
+      /* Schriftart */
+
+      font-family: "Arial Bold", sans-serif;
+
+      /* Hintergrundfarbe ändern */
+
+      background-color: rgb(255,182,193);
+
+    }
+
+
+
+    /* main container der countdown container enthält */
+
+    .main-container {
+
+      height: 100%;
+
+      width: 100%;
+
+      /* Zentrieren des Inhalts vom Main Container */
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+    }
+
+
+
+    /* container der countdown enthält */
+
+    .countdown-container {
+
+      width: 60%;
+
+      display: flex;
+
+      flex-direction: row;
+
+      align-items: center;
+
+      /* Hintergrundfarbe ändern */
+
+      background-color: rgb(255,182,193);
+
+    }
+
+
+
+    /* grösse der text und nummer container */
+
+    .container {
+
+      flex: 2 1 auto
+
+    }
+
+
+
+    /* grösse der Abstände zwischen den text und nummern container */
+
+    .spacer {
+
+      flex: 1 1 auto;
+
+    }
+
+
+
+    /* style aller nummern */
+
+    .number {
+
+      margin: 0px;
+
+      text-align: center;
+
+      /*  Schriftgrösse ändern */
+
+      font-size: 100px;
+
+      font-weight: bold;
+
+      /* Schriftfarbe ändern */
+
+      color: rgb(255,248,243);
+
+    }
+
+
+
+    /* style aller texte */
+
+    .text {
+
+      margin: 0px;
+
+      text-align: center;
+
+      /*  Schriftgrösse ändern */
+
+      font-size: 30px;
+
+      font-weight: bold;
+
+      /* Schriftfarbe ändern */
+
+      color: rgb(255,248,243);
+
+    }
+
+
+
+    .final-text {
+
+      padding-top: 100px;
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <div class="main-container">
+
+    <div class="countdown-container" >
+
+      <div class="container">
+
+        <p class="number" id="days"></p>
+
+        <p class="text">TAGE</p>
+
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="container">
+
+        <p class="number"  id="hours"></p>
+
+        <p class="text">STUNDEN</p>
+
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="container">
+
+        <p class="number" id="minutes"></p>
+
+        <p class="text">MINUTEN</p>
+
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="container">
+
+        <p class="number"  id="seconds"></p>
+
+        <p class="text">SEKUNDEN</p>
+
+      </div>
+
+    </div>
+
+    <p id="countdown-finish" class="final-text text"></p>
+
+  </div>
+
+  <script>
+
+    // Set the date we're counting down to
+
+    var countDownDate = new Date("Aug 19, 2022 08:00:00").getTime();
+
+
+
+    // Update the count down every 1 second
+
+    var x = setInterval(function () {
+
+
+
+      // Get today's date and time
+
+      var now = new Date().getTime();
+
+
+
+      // Find the distance between now and the count down date
+
+      var distance = countDownDate - now;
+
+
+
+      // Time calculations for days, hours, minutes and seconds
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+
+      // Output the result in an element with id="demo"
+
+      // Wörter ändern
+
+      document.getElementById("days").innerHTML = days;
+
+      document.getElementById("hours").innerHTML = hours;
+
+      document.getElementById("minutes").innerHTML = minutes;
+
+      document.getElementById("seconds").innerHTML = seconds;
+
+
+
+      // If the countdown is over, write some text 
+
+      if (distance < 0) {
+
+        clearInterval(x);
+
+        document.getElementById("countdown-finish").innerHTML = "Ich freue mich auf eine gemeinsame Zukunft mit dir!";
+
+      }
+
+    }, 1000);
+
+  </script>
+
+
+
+</body>
+
+
+
 </html>
